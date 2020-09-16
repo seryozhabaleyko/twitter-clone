@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Footer.scss';
 
-function Footer() {
+function Footer(): React.ReactElement {
     return <footer className="footer">footer</footer>;
 }
 
