@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Navbar.scss';
 
-function Navbar() {
+function Navbar(): React.ReactElement {
     return <nav className="navbar">Navbar</nav>;
 }
 
