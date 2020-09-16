@@ -2,6 +2,51 @@
     display: grid;
     grid-template-columns: 50% 50%;
 
+    .info-side {
+        position: relative;
+        overflow: hidden;
+
+        display: grid;
+
+        height: 100vh;
+        background-color: rgb(113, 201, 248);
+
+        .icon-background {
+            position: absolute;
+            top: -30vh;
+            right: -50vh;
+            font-size: 160vh;
+        }
+
+        ul {
+            position: relative;
+            max-width: 380px;
+            margin: 0;
+            padding: 15px 0 15px 0;
+
+            align-self: center;
+            justify-self: center;
+            list-style: none;
+
+            li {
+                margin-bottom: 40px;
+                font-size: 19px;
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+                line-height: 30px;
+            }
+        }
+    }
+
+    .login-side {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        height: 100vh;
+    }
+
     .left,
     .right {
         flex-shrink: 0;
