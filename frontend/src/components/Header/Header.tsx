@@ -4,7 +4,7 @@ import Navbar from '../Navbar';
 
 import './Header.scss';
 
-function Header() {
+function Header(): React.ReactElement {
     return (
         <header className="header">
             <Navbar />
