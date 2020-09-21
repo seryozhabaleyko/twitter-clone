@@ -1,0 +1,30 @@
+.logo {
+    display: inline-flex;
+
+    min-height: 49px;
+    min-width: 49px;
+    border-radius: 9999px;
+
+    margin: 0;
+    padding: 0;
+
+    > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 49px;
+        min-width: 49px;
+        border-radius: 9999px;
+
+        transition-property: background-color;
+        transition-duration: 0.2s;
+
+        &:hover {
+            background-color: rgba(29, 161, 242, 0.1);
+        }
+    }
+
+    &__img {
+        font-size: 2rem;
+    }
+}

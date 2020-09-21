@@ -1,22 +1,19 @@
-import { type } from 'os';
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, RouteProps } from 'react-router-dom';
 
-type PrivateRouteProps = {
-    children: React.ReactNode;
-};
+interface PrivateRouteProps extends RouteProps {}
 
 function PrivateRoute({ children, ...rest }: PrivateRouteProps) {
     return (
         <Route
             {...rest}
             render={({ location }) =>
-                false ? (
+                !true ? (
                     children
                 ) : (
                     <Redirect
                         to={{
-                            pathname: '/login',
+                            pathname: '/home',
                             state: { from: location },
                         }}
                     />

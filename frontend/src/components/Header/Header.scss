@@ -1,0 +1,8 @@
+.header {
+    display: grid;
+    justify-content: end;
+
+    &__inner {
+        width: 275px;
+    }
+}

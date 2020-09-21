@@ -1,13 +1,33 @@
 import React from 'react';
 
-import Navbar from '../Navbar';
+import Logo from '../Logo';
+import Nav from '../Nav';
 
 import './Header.scss';
 
-function Header(): React.ReactElement {
+function Header() {
     return (
         <header className="header">
-            <Navbar />
+            <div className="header__inner">
+                <div
+                    style={{
+                        position: 'fixed',
+                        top: '0px',
+                        height: '100%',
+                    }}
+                >
+                    <div
+                        style={{
+                            overflowY: 'auto',
+                            width: '275px',
+                            height: '100%',
+                        }}
+                    >
+                        <Logo />
+                        <Nav />
+                    </div>
+                </div>
+            </div>
         </header>
     );
 }

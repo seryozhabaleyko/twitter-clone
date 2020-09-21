@@ -1,0 +1,46 @@
+.nav {
+    &__link {
+        padding-bottom: 4px;
+        padding-top: 4px;
+
+        &.active {
+            .nav-item__title {
+                color: rgba(29, 161, 242, 1);
+            }
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        padding: 10px;
+        border-radius: 9999px;
+
+        &:hover {
+            background-color: rgba(29, 161, 242, 0.1);
+        }
+    }
+
+    &-item {
+        &__icon {
+            svg {
+                max-width: 100%;
+                height: 1.75rem;
+                display: inline-block;
+                fill: currentcolor;
+            }
+        }
+
+        &__title {
+            font-size: 19px;
+            font-weight: bold;
+            line-height: 1.3125;
+
+            margin-right: 15px;
+            margin-left: 20px;
+
+            color: rgba(0, 0, 0, 1);
+        }
+    }
+}

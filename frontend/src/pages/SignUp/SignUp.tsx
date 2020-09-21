@@ -3,7 +3,7 @@ import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 import './SignUp.scss';
 
-function SignUp(): React.ReactElement {
+function SignUp() {
     useDocumentTitle('Зарегистрироваться в Твиттере / Твиттер');
 
     return (

@@ -1,27 +1,30 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// import Header from './components/Header';
-import Footer from './components/Footer';
+import PrivateRoute from './components/PrivateRoute';
+import Header from './components/Header';
 import Logout from './pages/Logout';
 import SignIn from './pages/SignIn';
+import Home from './pages/Home';
 
-function App(): React.ReactElement {
+function App() {
     return (
-        <>
+        <div id="twitter">
             <Router>
-                {/* <Header /> */}
+                <Header />
                 <Switch>
-                    <Route path="/" exact>
+                    <PrivateRoute path="/" exact>
                         <Logout />
-                    </Route>
+                    </PrivateRoute>
                     <Route path="/login">
                         <SignIn />
                     </Route>
+                    <Route path="/home">
+                        <Home />
+                    </Route>
                 </Switch>
-                <Footer />
             </Router>
-        </>
+        </div>
     );
 }
 

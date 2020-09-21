@@ -9,8 +9,8 @@ import './SignIn.scss';
 
 function SignIn() {
     useDocumentTitle('Войти в Твиттер / Твиттер');
-    const [login, setLogin] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
+    const [login, setLogin] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         const {

@@ -6,7 +6,7 @@ import useDocumentTitle from '../../hooks/useDocumentTitle';
 
 import './Logout.scss';
 
-function Logout(): React.ReactElement {
+function Logout() {
     useDocumentTitle('Твиттер. Здесь обсуждают всё, что происходит. / Твиттер');
 
     return (

@@ -9,6 +9,12 @@ body,
     flex-direction: column;
 }
 
+#twitter {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 26.5% 1fr;
+}
+
 .main {
-    flex: 1 0 auto;
+    display: flex;
 }
