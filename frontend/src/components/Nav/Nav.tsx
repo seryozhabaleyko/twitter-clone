@@ -1,5 +1,5 @@
 import React from 'react';
-import { TwitterOutlined } from '@ant-design/icons';
+import { NumberOutlined, TwitterOutlined } from '@ant-design/icons';
 
 import NavItem from './NavItem';
 
@@ -16,7 +16,7 @@ const navList = [
         id: 2,
         title: 'Поиск',
         slug: '/search',
-        icon: <TwitterOutlined style={{ fontSize: '2rem' }} />,
+        icon: <NumberOutlined style={{ fontSize: '2rem' }} />,
     },
     {
         id: 3,
