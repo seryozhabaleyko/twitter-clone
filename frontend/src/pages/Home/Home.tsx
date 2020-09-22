@@ -20,14 +20,12 @@ function Home() {
                     </div>
                 </header>
 
-                <div>
+                {/* <div>
                     <TextArea
-                        /* value={value}
-                        onChange={this.onChange} */
                         placeholder="Controlled autosize"
                         autoSize={{ minRows: 3, maxRows: 5 }}
                     />
-                </div>
+                </div> */}
 
                 <div style={{ height: '10px', backgroundColor: 'rgb(230, 236, 240)' }}></div>
 
