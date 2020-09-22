@@ -1,0 +1,61 @@
+.tweet {
+    border-bottom: 1px solid rgb(230, 236, 240);
+
+    &__inner {
+        display: flex;
+        padding: 10px 15px 10px 15px;
+    }
+
+    &__avatar {
+        margin-right: 10px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 425px;
+        margin-top: 10px;
+    }
+
+    &-button {
+        display: flex;
+        align-items: center;
+
+        &__count {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
+
+.drop-button {
+    height: 27px;
+    width: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    svg {
+        width: 1em;
+        height: 1em;
+        fill: #657786;
+    }
+
+    &:hover {
+        background-color: rgba(29, 161, 242, 0.1);
+    }
+}
