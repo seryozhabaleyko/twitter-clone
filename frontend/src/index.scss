@@ -18,3 +18,13 @@ body,
 .main {
     display: flex;
 }
+
+.btn-icon {
+    color: rgba(29, 161, 242, 1);
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: rgba(29, 161, 242, 0.1);
+        color: rgba(29, 161, 242, 1);
+    }
+}
