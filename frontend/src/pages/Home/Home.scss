@@ -5,6 +5,12 @@
     border-left: 1px solid rgb(230, 236, 240);
     border-right: 1px solid rgb(230, 236, 240);
 
+    &-page {
+        display: grid !important;
+        grid-template-columns: 600px 350px;
+        gap: 40px;
+    }
+
     &__heading {
         position: sticky;
         top: 0px;
