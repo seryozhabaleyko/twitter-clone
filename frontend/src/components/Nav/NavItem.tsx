@@ -11,10 +11,10 @@ interface NavItem {
 
 function NavItem({ title, slug, icon }: NavItem) {
     return (
-        <NavLink className="nav__link" to={slug} exact>
-            <div className="nav__item">
-                <div className="nav-item__icon">{icon}</div>
-                <div className="nav-item__title">{title}</div>
+        <NavLink className="nav-link" to={slug} exact>
+            <div className="nav-item">
+                <div className="nav-item-icon">{icon}</div>
+                <div className="nav-item-title">{title}</div>
             </div>
         </NavLink>
     );
