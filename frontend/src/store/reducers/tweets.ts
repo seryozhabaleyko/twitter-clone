@@ -12,7 +12,7 @@ const initialState: TweetsState = {
     error: null,
 };
 
-function tweetsReducer(state = initialState, action: TweetsActionTypes): TweetsState {
+export function tweetsReducer(state = initialState, action: TweetsActionTypes): TweetsState {
     switch (action.type) {
         case FETCH_TWEETS_REQUEST:
             return { ...state, loading: true, error: null };
@@ -24,5 +24,3 @@ function tweetsReducer(state = initialState, action: TweetsActionTypes): TweetsS
             return state;
     }
 }
-
-export default tweetsReducer;
