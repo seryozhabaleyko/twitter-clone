@@ -1,0 +1,39 @@
+.topics {
+    overflow: hidden;
+    border-radius: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    background-color: rgb(245, 248, 250);
+    border: 1px solid rgb(245, 248, 250);
+
+    &__loading {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__heading {
+        padding: 10px 15px 10px 15px;
+        border-bottom: 1px solid rgb(230, 236, 240);
+
+        > h2 {
+            margin: 0;
+            font-size: 19px;
+            font-weight: 800;
+            color: rgb(20, 23, 26);
+        }
+    }
+
+    &__footer {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+    }
+}
