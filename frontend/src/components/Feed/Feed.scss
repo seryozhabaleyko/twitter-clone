@@ -1,0 +1,38 @@
+.feed {
+    width: 600px;
+    background-color: rgba(255, 255, 255, 1);
+
+    border-left: 1px solid rgb(230, 236, 240);
+    border-right: 1px solid rgb(230, 236, 240);
+
+    &-page {
+        display: grid !important;
+        grid-template-columns: 600px 350px;
+        gap: 40px;
+    }
+
+    &-heading {
+        position: sticky;
+        top: 0px;
+        z-index: 3;
+        height: 53px;
+        border-bottom: 1px solid rgb(230, 236, 240);
+        background-color: #fff;
+
+        &__inner {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 19px;
+        font-weight: 800;
+        line-height: 1.3125;
+        color: rgb(20, 23, 26);
+    }
+}
