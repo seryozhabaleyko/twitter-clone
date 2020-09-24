@@ -1,0 +1,46 @@
+.tweet-box {
+    &__inner {
+        display: flex;
+        padding: 10px 15px 10px 15px;
+    }
+
+    &__avatar {
+        margin-right: 10px;
+    }
+
+    &__body {
+        flex-grow: 1;
+    }
+
+    &__control {
+        textarea {
+            padding: 0 !important;
+            margin: 10px 0 10px 0;
+            resize: none;
+
+            color: rgb(20, 23, 26);
+            font-weight: 400;
+            font-size: 19px;
+
+            &::placeholder {
+                color: #657786;
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        > div {
+            margin-top: 10px;
+        }
+    }
+}
+
+.upload-options {
+    display: flex;
+    align-items: center;
+    margin-left: -13px;
+}
