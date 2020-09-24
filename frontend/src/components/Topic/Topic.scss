@@ -1,0 +1,36 @@
+.topic {
+    border-bottom: 1px solid rgb(230, 236, 240);
+    transition: background-color 0.2s;
+    cursor: pointer;
+
+    &__inner {
+        padding: 10px 15px;
+    }
+
+    &__topic {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: calc(19.6875px);
+        color: rgb(101, 119, 134);
+    }
+
+    &__name {
+        padding-top: 2px;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 1.3125;
+        color: rgb(20, 23, 26);
+    }
+
+    &__tweet-value {
+        margin-top: 5px;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: calc(19.6875px);
+        color: rgb(101, 119, 134);
+    }
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+}
