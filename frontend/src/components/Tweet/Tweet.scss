@@ -1,6 +1,10 @@
 .tweet {
     border-bottom: 1px solid rgb(230, 236, 240);
 
+    &:hover {
+        background-color: rgb(245, 248, 250);
+    }
+
     &__inner {
         display: flex;
         padding: 10px 15px 10px 15px;
@@ -35,27 +39,59 @@
         align-items: center;
 
         &__count {
-            padding-left: 10px;
-            padding-right: 10px;
+            color: rgb(101, 119, 134);
+            font-weight: 400;
+            font-size: 13px;
         }
     }
 }
 
-.drop-button {
-    height: 27px;
-    width: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+.user {
+    &-info {
+        display: flex;
+        align-items: center;
 
-    svg {
-        width: 1em;
-        height: 1em;
-        fill: #657786;
+        &__time {
+            color: rgb(101, 119, 134);
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 15px;
+
+            > span {
+                color: rgb(101, 119, 134);
+                font-weight: 400;
+                font-size: 15px;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
     }
 
-    &:hover {
-        background-color: rgba(29, 161, 242, 0.1);
+    &-name {
+        display: flex;
+        align-items: center;
+
+        &-text {
+            white-space: nowrap;
+            font-size: 15px;
+            font-weight: bold;
+            color: rgb(20, 23, 26);
+        }
+
+        &-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 2px;
+            font-size: 1.25em;
+            color: rgba(29, 161, 242, 1);
+        }
+    }
+
+    &-nickname {
+        margin-left: 5px;
+        font-size: 15px;
+        font-weight: 400;
+        color: rgb(101, 119, 134);
     }
 }
