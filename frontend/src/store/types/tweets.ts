@@ -4,6 +4,12 @@ import {
     fetchTweetsSuccess,
     fetchTweetsFailure,
 } from '../actions/tweets';
+import { fetchTweetSuccess } from '../actions/tweet';
+
+export const FETCH_TWEETS = 'FETCH_TWEETS';
+export const FETCH_TWEETS_REQUEST = 'FETCH_TWEETS_REQUEST';
+export const FETCH_TWEETS_SUCCESS = 'FETCH_TWEETS_SUCCESS';
+export const FETCH_TWEETS_FAILURE = 'FETCH_TWEETS_FAILURE';
 
 export interface Tweet {
     _id: string;
@@ -22,14 +28,10 @@ export interface TweetsState {
     error: Error | null;
 }
 
-export const FETCH_TWEETS = 'FETCH_TWEETS';
 export type FetchTweets = ReturnType<typeof fetchTweets>;
-
-export const FETCH_TWEETS_REQUEST = 'FETCH_TWEETS_REQUEST';
-export const FETCH_TWEETS_SUCCESS = 'FETCH_TWEETS_SUCCESS';
-export const FETCH_TWEETS_FAILURE = 'FETCH_TWEETS_FAILURE';
 
 export type TweetsActionTypes =
     | ReturnType<typeof fetchTweetsRequest>
     | ReturnType<typeof fetchTweetsSuccess>
-    | ReturnType<typeof fetchTweetsFailure>;
+    | ReturnType<typeof fetchTweetsFailure>
+    | ReturnType<typeof fetchTweetSuccess>;
