@@ -1,11 +1,35 @@
 .search {
-    border-radius: 9999px !important;
+    display: flex;
+    border-radius: 9999px;
+    background-color: rgb(230, 236, 240);
 
-    &-icon {
-        font-size: 1.25em;
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         svg {
+            max-width: 100%;
+            min-width: 30px;
+            height: 1.25em;
+            padding-left: 10px;
+            fill: currentcolor;
             color: rgb(101, 119, 134);
+        }
+    }
+
+    &__input {
+        width: 100%;
+        font-size: 15px;
+        font-weight: 400;
+        color: rgb(20, 23, 26);
+
+        input {
+            outline: none;
+            border: none;
+            background: transparent;
+            width: 100%;
+            padding: 10px;
         }
     }
 }
