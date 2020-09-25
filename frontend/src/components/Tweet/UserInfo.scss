@@ -1,0 +1,53 @@
+.user-info {
+    display: flex;
+    align-items: center;
+
+    &__name {
+        display: flex;
+        align-items: center;
+
+        &-text {
+            font-size: 15px;
+            font-weight: bold;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu,
+                'Helvetica Neue', sans-serif;
+            color: rgb(20, 23, 26);
+        }
+
+        &-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 2px;
+            font-size: 1.25em;
+            color: rgba(29, 161, 242, 1);
+        }
+    }
+
+    &__nickname {
+        margin-left: 5px;
+        font-size: 15px;
+        font-weight: 400;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu,
+            'Helvetica Neue', sans-serif;
+        color: rgb(101, 119, 134);
+    }
+
+    &__dot {
+        padding-left: 5px;
+        padding-right: 5px;
+        color: rgb(101, 119, 134);
+        font-weight: 400;
+        font-size: 15px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu,
+            'Helvetica Neue', sans-serif;
+    }
+
+    &__time {
+        color: rgb(101, 119, 134);
+        font-size: 15px;
+        font-weight: 400;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu,
+            'Helvetica Neue', sans-serif;
+    }
+}
