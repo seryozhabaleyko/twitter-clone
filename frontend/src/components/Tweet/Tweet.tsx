@@ -7,22 +7,27 @@ import Header from './Header';
 import Footer from './Footer';
 
 import './Tweet.scss';
+import { Link } from 'react-router-dom';
+import Photos from './Photos';
 
-function Tweet({ text, user }: TweetProps) {
+function Tweet({ _id, text, user }: TweetProps) {
     return (
         <article className="tweet">
-            <div className="tweet__inner">
-                <div className="tweet__avatar">
-                    <Avatar src={user.avatarUrl} size={49} icon={<UserOutlined />} />
-                </div>
-                <div className="tweet__content">
-                    <Header {...user} />
-                    <div className="tweet__text">
-                        <div className="txt">{text}</div>
+            <Link to={`/${user.username}/tweet/${_id}`}>
+                <div className="tweet__inner">
+                    <div className="tweet__avatar">
+                        <Avatar src={user.avatarUrl} size={49} icon={<UserOutlined />} />
                     </div>
-                    <Footer />
+                    <div className="tweet__content">
+                        <Header {...user} />
+                        <div className="tweet__text">
+                            <div className="txt">{text}</div>
+                        </div>
+                        <Photos />
+                        <Footer />
+                    </div>
                 </div>
-            </div>
+            </Link>
         </article>
     );
 }
