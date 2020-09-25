@@ -10,6 +10,7 @@ import { fetchTweets } from '../../store/actions/tweets';
 import { fetchTopics } from '../../store/actions/topics';
 
 import './Home.scss';
+import Sidebar from '../../components/Sidebar';
 
 function Home() {
     useDocumentTitle('Главная / Твиттер');
@@ -21,14 +22,22 @@ function Home() {
     }, [dispatch]);
 
     return (
-        <main className="main home-page">
-            <Feed />
+        <main className="main">
+            <div
+                className="main__container"
+                style={{ display: 'flex', justifyContent: 'space-between' }}
+            >
+                <Feed />
+                <Sidebar />
+            </div>
+
+            {/*
             <div className="home-page__sidebar">
                 <Affix offsetTop={10}>
                     <Search />
                     <Topics />
                 </Affix>
-            </div>
+            </div> */}
         </main>
     );
 }
