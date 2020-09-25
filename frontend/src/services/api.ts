@@ -12,6 +12,17 @@ export function fetchTopicsApi() {
 }
 
 export function addTweetApi(tweet: Tweet) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(tweet);
+        }, 5000);
+    });
+}
+
+export async function fetchTweetApi(id: Tweet['id']) {
     const url = 'https://trycode.pw/c/2OBQ1.json';
-    return axios.post(url, tweet);
+    const response = await axios.get(url);
+    console.log(response);
+
+    return response.data.filter((tweet: { _id: string }) => tweet._id === id);
 }
