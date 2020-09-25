@@ -1,0 +1,58 @@
+.account {
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 10px;
+    border-radius: 9999px;
+
+    transition: background-color 0.2s;
+
+    &__container {
+        margin: 20px 0 10px 0;
+    }
+
+    &__avatar {
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: flex-start;
+        padding-left: 10px;
+        padding-right: 30px;
+    }
+
+    &__name {
+        font-size: 15px;
+        font-weight: bold;
+        color: rgb(20, 23, 26);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__nickname {
+        font-size: 15px;
+        font-weight: 400;
+        color: rgb(101, 119, 134);
+    }
+
+    &__icon {
+        display: flex;
+
+        svg {
+            font-size: 1.2rem;
+        }
+    }
+
+    &:hover {
+        background-color: rgba(29, 161, 242, 0.1);
+    }
+}
