@@ -1,7 +1,6 @@
 .nav {
     &-link {
         display: flex;
-        width: 100%;
         padding-bottom: 4px;
         padding-top: 4px;
 
@@ -61,6 +60,7 @@
         }
 
         &-title {
+            display: none;
             font-size: 19px;
             font-weight: bold;
             line-height: 1.3125;
@@ -69,6 +69,22 @@
             margin-left: 20px;
 
             color: rgba(0, 0, 0, 1);
+
+            @media (min-width: 576px) {
+            }
+
+            @media (min-width: 768px) {
+            }
+
+            @media (min-width: 992px) {
+            }
+
+            @media (min-width: 1200px) {
+            }
+
+            @media (min-width: 1400px) {
+                display: block;
+            }
         }
     }
 }
