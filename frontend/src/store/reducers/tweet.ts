@@ -25,6 +25,13 @@ const initialState: TweetState = {
 
 export function tweetReducer(state = initialState, action: TweetsActionTypes) {
     switch (action.type) {
+        case ADD_TWEET_REQUEST:
+            return { ...state, loading: true, data: initialState.data, error: null };
+        case ADD_TWEET_SUCCESS:
+            return { ...state, loading: false };
+        case ADD_TWEET_FAILURE:
+            return { ...state, loading: false, error: action.payload };
+
         case FETCH_TWEET_REQUEST:
             return { ...state, loading: true, data: initialState.data, error: null };
         case FETCH_TWEET_SUCCESS:
