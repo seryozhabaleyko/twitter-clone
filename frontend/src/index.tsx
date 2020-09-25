@@ -8,7 +8,6 @@ import * as serviceWorker from './serviceWorker';
 import configureStore from './store/configureStore';
 import rootSaga from './store/sagas/rootSaga';
 
-import 'antd/dist/antd.css';
 import './index.scss';
 
 const store = configureStore();
