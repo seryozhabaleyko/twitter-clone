@@ -1,7 +1,7 @@
 html,
 body,
 #root {
-    height: 100%;
+    min-height: 100%;
 }
 
 #root {
@@ -10,13 +10,33 @@ body,
 }
 
 #twitter {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 26.5% 1fr;
+    display: flex;
+    min-height: 100%;
 }
 
 .main {
     display: flex;
+    flex-grow: 1;
+
+    &__container {
+        @media (min-width: 576px) {
+        }
+
+        @media (min-width: 768px) {
+            width: 600px;
+        }
+
+        @media (min-width: 992px) {
+            width: 920px;
+        }
+
+        @media (min-width: 1200px) {
+            width: 990px;
+        }
+
+        @media (min-width: 1400px) {
+        }
+    }
 }
 
 .btn-icon {
