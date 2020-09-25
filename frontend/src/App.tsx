@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Logout from './pages/Logout';
 import SignIn from './pages/SignIn';
 import Home from './pages/Home';
+import Tweet from './pages/Tweet';
 
 function App() {
     return (
@@ -21,6 +22,9 @@ function App() {
                     </Route>
                     <Route path="/home">
                         <Home />
+                    </Route>
+                    <Route path="/:nickname/tweet/:id">
+                        <Tweet />
                     </Route>
                 </Switch>
             </Router>
