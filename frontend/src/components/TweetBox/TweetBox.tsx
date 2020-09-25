@@ -1,18 +1,38 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import TextArea from 'antd/lib/input/TextArea';
+import { makeStyles, styled } from '@material-ui/core/styles';
 
 import { addTweet } from '../../store/actions/tweet';
+import { getTweet } from '../../store/selectors/tweet';
 
 import './TweetBox.scss';
+
+const SubmitButton = styled(Button)({
+    borderRadius: '9999px',
+    textTransform: 'none',
+    padding: '7.5px 16px',
+    backgroundColor: 'rgb(29, 161, 242)',
+    '&:hover': {
+        backgroundColor: 'rgb(26, 145, 218)',
+    },
+    '&:disabled': {
+        opacity: '0.5',
+        color: '#fff',
+        backgroundColor: 'rgb(29, 161, 242)',
+    },
+});
 
 function TweetBox() {
     const [text, setText] = useState('');
     const dispatch = useDispatch();
+
+    const { loading, error } = useSelector(getTweet, shallowEqual);
 
     const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const { value } = e.currentTarget;
@@ -39,7 +59,7 @@ function TweetBox() {
         );
     };
 
-    const isDisabled = !text;
+    const isDisabled = !text || loading;
 
     return (
         <div className="tweet-box">
@@ -110,15 +130,16 @@ function TweetBox() {
                             </IconButton>
                         </div>
                         <div>
-                            <Button
+                            <SubmitButton
                                 variant="contained"
                                 color="primary"
                                 disabled={isDisabled}
                                 disableElevation
                                 onClick={handleTweetSubmit}
+                                startIcon={loading ? <CircularProgress size={20} /> : false}
                             >
                                 Твитнуть
-                            </Button>
+                            </SubmitButton>
                         </div>
                     </div>
                 </div>
