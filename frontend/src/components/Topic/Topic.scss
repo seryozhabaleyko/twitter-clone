@@ -1,6 +1,5 @@
 .topic {
     border-bottom: 1px solid rgb(230, 236, 240);
-    transition: background-color 0.2s;
     cursor: pointer;
 
     &__inner {
@@ -29,6 +28,10 @@
         line-height: calc(19.6875px);
         color: rgb(101, 119, 134);
     }
+}
+
+.topic-hover-effect {
+    transition: background-color 0.2s;
 
     &:hover {
         background-color: rgba(0, 0, 0, 0.03);
