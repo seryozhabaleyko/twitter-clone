@@ -13,9 +13,16 @@
     }
 
     &__control {
+        display: flex;
+        padding: 10px 0 10px 0;
+
         textarea {
-            padding: 0 !important;
-            margin: 10px 0 10px 0;
+            outline: none;
+            border: none;
+            background: transparent;
+            width: 100%;
+            padding: 0;
+
             resize: none;
 
             color: rgb(20, 23, 26);
@@ -37,10 +44,26 @@
             margin-top: 10px;
         }
     }
+
+    &__icon-button {
+        padding: 8.25px !important;
+        font-size: 15px !important;
+        color: rgba(29, 161, 242, 1) !important;
+
+        &:hover {
+            background-color: rgba(29, 161, 242, 0.1) !important;
+        }
+    }
+
+    &__svg-icon {
+        width: 1.5em !important;
+        height: 1.5em !important;
+        font-size: 15px !important;
+    }
 }
 
 .upload-options {
     display: flex;
     align-items: center;
-    margin-left: -13px;
+    margin-left: -10px;
 }
