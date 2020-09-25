@@ -27,6 +27,8 @@
     }
 
     &__text {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu,
+            'Helvetica Neue', sans-serif;
         font-size: 15px;
         font-weight: 400;
         line-height: 1.3125;
@@ -65,55 +67,5 @@
             font-weight: 400;
             font-size: 13px;
         }
-    }
-}
-
-.user {
-    &-info {
-        display: flex;
-        align-items: center;
-
-        &__time {
-            color: rgb(101, 119, 134);
-            cursor: pointer;
-            font-weight: 400;
-            font-size: 15px;
-
-            > span {
-                color: rgb(101, 119, 134);
-                font-weight: 400;
-                font-size: 15px;
-                padding-left: 5px;
-                padding-right: 5px;
-            }
-        }
-    }
-
-    &-name {
-        display: flex;
-        align-items: center;
-
-        &-text {
-            white-space: nowrap;
-            font-size: 15px;
-            font-weight: bold;
-            color: rgb(20, 23, 26);
-        }
-
-        &-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 2px;
-            font-size: 1.25em;
-            color: rgba(29, 161, 242, 1);
-        }
-    }
-
-    &-nickname {
-        margin-left: 5px;
-        font-size: 15px;
-        font-weight: 400;
-        color: rgb(101, 119, 134);
     }
 }
