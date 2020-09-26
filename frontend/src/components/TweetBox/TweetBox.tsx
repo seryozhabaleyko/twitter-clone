@@ -32,7 +32,7 @@ function TweetBox() {
     const [text, setText] = useState('');
     const dispatch = useDispatch();
 
-    const { loading, error } = useSelector(getTweet, shallowEqual);
+    const { loading } = useSelector(getTweet, shallowEqual);
 
     const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const { value } = e.currentTarget;
