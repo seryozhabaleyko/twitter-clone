@@ -1,16 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Affix from 'antd/lib/affix';
 
 import useDocumentTitle from '../../hooks/useDocumentTitle';
-import Search from '../../components/Search';
-import Topics from '../../components/Topics';
 import Feed from '../../components/Feed';
+import Sidebar from '../../components/Sidebar';
 import { fetchTweets } from '../../store/actions/tweets';
 import { fetchTopics } from '../../store/actions/topics';
 
 import './Home.scss';
-import Sidebar from '../../components/Sidebar';
 
 function Home() {
     useDocumentTitle('Главная / Твиттер');
@@ -30,14 +27,6 @@ function Home() {
                 <Feed />
                 <Sidebar />
             </div>
-
-            {/*
-            <div className="home-page__sidebar">
-                <Affix offsetTop={10}>
-                    <Search />
-                    <Topics />
-                </Affix>
-            </div> */}
         </main>
     );
 }
