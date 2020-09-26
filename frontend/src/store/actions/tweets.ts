@@ -6,7 +6,7 @@ import {
     FETCH_TWEETS_FAILURE,
 } from '../types/tweets';
 
-function interLiteralFromString<T extends string>(arg: T): T {
+/* function interLiteralFromString<T extends string>(arg: T): T {
     return arg;
 }
 
@@ -16,7 +16,7 @@ function interLiteral<U, T extends U>(arg: T): T {
 
 function interStringLiteral<T extends string>(arg: T): T {
     return interLiteral<string, T>(arg);
-}
+} */
 
 export function fetchTweets() {
     return {
