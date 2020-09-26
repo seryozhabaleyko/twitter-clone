@@ -22,7 +22,10 @@ export function addTweetApi(tweet: Tweet) {
 export async function fetchTweetApi(id: Tweet['id']) {
     const url = 'https://trycode.pw/c/2OBQ1.json';
     const response = await axios.get(url);
-    console.log(response);
-
     return response.data.filter((tweet: { _id: string }) => tweet._id === id);
+}
+
+export function fetchRecommendedApi() {
+    const url = 'https://trycode.pw/c/OD0ER.json';
+    return axios.get(url);
 }
