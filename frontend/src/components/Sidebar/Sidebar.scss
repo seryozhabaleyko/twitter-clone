@@ -1,5 +1,6 @@
 .sidebar {
     display: none;
+    margin-right: 10px;
 
     @media (min-width: 576px) {
     }
@@ -17,5 +18,10 @@
     }
 
     @media (min-width: 1400px) {
+    }
+
+    &__inner {
+        padding-top: 10px;
+        padding-bottom: 59px;
     }
 }
