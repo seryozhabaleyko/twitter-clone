@@ -27,8 +27,8 @@ function Topics() {
     }
 
     return (
-        <section className="topics">
-            <header className="topics__header">
+        <aside className="topics" aria-label="Лента: Актуальные темы">
+            <div className="topics__header">
                 <h2 className="topics__title">Актуальные темы для вас</h2>
                 <div className="topics__settings">
                     <SvgIcon>
@@ -38,7 +38,7 @@ function Topics() {
                         </g>
                     </SvgIcon>
                 </div>
-            </header>
+            </div>
 
             {data.map((topic) => (
                 <Topic key={topic.name} {...topic} />
@@ -47,7 +47,7 @@ function Topics() {
             <Link className="topics__footer topic-hover-effect" to="#">
                 Показать еще
             </Link>
-        </section>
+        </aside>
     );
 }
 
