@@ -3,6 +3,7 @@ import React from 'react';
 import Logo from '../Logo';
 import Nav from '../Nav';
 import Account from '../Account';
+import Button from '../Button';
 
 import './Header.scss';
 
@@ -26,6 +27,9 @@ function Header() {
                         <div>
                             <Logo />
                             <Nav />
+                            <div style={{ width: '90%', margin: '5px 0 5px 0' }}>
+                                <Button />
+                            </div>
                         </div>
                         <div>
                             <Account />
@@ -33,30 +37,6 @@ function Header() {
                     </div>
                 </div>
             </div>
-            {/* <div className="header__inner">
-                <div
-                    style={{
-                        position: 'fixed',
-                        top: '0px',
-                        height: '100%',
-                    }}
-                >
-                    <div
-                        style={{
-                            overflowY: 'auto',
-                            width: '275px',
-                            height: '100%',
-                        }}
-                    >
-                        <div>
-                            <Logo />
-                            <Nav />
-                        </div>
-
-                        <Account />
-                    </div>
-                </div>
-            </div> */}
         </header>
     );
 }
