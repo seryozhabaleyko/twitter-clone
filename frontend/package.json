@@ -18,6 +18,7 @@
         "@types/redux-saga": "^0.10.5",
         "antd": "^4.6.4",
         "axios": "^0.20.0",
+        "json2mq": "^0.2.0",
         "node-sass": "^4.14.1",
         "react": "^16.13.1",
         "react-content-loader": "^5.1.2",
@@ -51,5 +52,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "@types/json2mq": "^0.2.0"
     }
 }
