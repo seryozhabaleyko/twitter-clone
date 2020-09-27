@@ -23,5 +23,7 @@
     &__inner {
         padding-top: 10px;
         padding-bottom: 59px;
+        position: sticky;
+        top: -200px;
     }
 }
