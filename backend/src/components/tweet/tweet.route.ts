@@ -4,9 +4,9 @@ import * as tweetController from './tweet.controller';
 const router = express.Router();
 
 router.get('/tweet', tweetController.getAll);
-router.get('/tweet/:id', tweetController.getById);
+router.get('/tweet/:id([0-9]+)', tweetController.getById);
 router.post('/tweet', tweetController.create);
-router.delete('/tweet/:id', tweetController.remove);
-router.patch('/tweet/:id', tweetController.update);
+router.delete('/tweet/:id([0-9]+)', tweetController.remove);
+router.patch('/tweet/:id([0-9]+)', tweetController.update);
 
 export default router;
