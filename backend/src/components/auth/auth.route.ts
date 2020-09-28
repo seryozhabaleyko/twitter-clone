@@ -1,7 +1,10 @@
 import express from 'express';
 import { loginController, registerController } from './auth.controller';
+import { loginValidation, registerValidation } from './auth.validation';
 
 const router = express.Router();
 
-export const loginRoute = router.post('/login', loginController);
-export const registerRoute = router.post('/register', registerController);
+router.post('/login', loginValidation, loginController);
+router.post('/register', registerValidation, registerController);
+
+export default router;
