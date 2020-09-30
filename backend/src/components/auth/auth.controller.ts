@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { validationResult } from 'express-validator';
-import { UserModel } from '../user/user.model';
+import { UserModel } from '../users/users.model';
 
 export async function loginController(req: Request, res: Response) {
     const errors = validationResult(req);
@@ -63,11 +63,11 @@ export async function registerController(req: Request, res: Response) {
     const salt = await bcrypt.genSalt(10);
     const password = await bcrypt.hash(req.body.password, salt);
 
-    const user = new UserModel({ email: req.body.email, password });
+    const user = new UserModel({ username: req.body.username, email: req.body.email, password });
 
     try {
         const savedUser = await user.save();
-        res.status(201).json({ data: savedUser, message: 'Register successful.' });
+        res.status(201).json({ user: savedUser, message: 'Register successful.' });
     } catch (error) {
         res.status(400).json({ error });
     }
