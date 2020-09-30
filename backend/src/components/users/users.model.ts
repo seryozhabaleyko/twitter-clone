@@ -1,5 +1,5 @@
-import { Schema, model, Types } from 'mongoose';
-import { IUserDoc } from './users.interface';
+import { Schema, model, Document } from 'mongoose';
+import { IUser } from './users.interface';
 
 const userSchema = new Schema({
     username: {
@@ -31,4 +31,4 @@ userSchema.set('toJSON', {
     },
 });
 
-export const UserModel = model<IUserDoc>('users', userSchema);
+export const UserModel = model<IUser & Document>('users', userSchema);
