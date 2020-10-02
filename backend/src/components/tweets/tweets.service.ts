@@ -19,14 +19,23 @@ export async function getTweetById(tweetId: string): Promise<ITweet> {
 }
 
 export async function createTweet(reqBody: any): Promise<ITweet> {
-    const tweet = await new TweetModel({
+    const data = {
         text: reqBody.text,
         user: reqBody.user._id,
-    }).save();
+    };
+
+    const tweet = await new TweetModel(data).save();
+
     return tweet;
 }
 
-export async function updateTweet() {}
+export async function updateTweet(tweetId: string, update: ITweet): Promise<ITweet> {
+    const tweet = await TweetModel.findByIdAndUpdate(tweetId, update, { new: true });
+
+    if (!tweet) throw new HttpException(409, "You're not tweet");
+
+    return tweet;
+}
 
 export async function deleteTweet(tweetId: string): Promise<ITweet> {
     if (!isValidObjectId(tweetId)) throw new HttpException(400, 'Невалидный id. 🙅‍♂️');
