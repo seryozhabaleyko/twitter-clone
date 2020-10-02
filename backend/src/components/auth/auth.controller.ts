@@ -28,7 +28,7 @@ export async function loginController(req: Request, res: Response) {
     }
 
     const secret: string = process.env.JWT_SECRET as string;
-    const expiresIn: number = 60 * 60;
+    const expiresIn = '24h';
 
     const token = jwt.sign(
         {
