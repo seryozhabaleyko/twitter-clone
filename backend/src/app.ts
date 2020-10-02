@@ -1,25 +1,55 @@
 import express, { Application } from 'express';
-import cors from 'cors';
-import logger from 'morgan';
-import passport from 'passport';
-import authRoute from './components/auth/auth.route';
-import usersRoute from './components/users/users.route';
-import tweetsRoute from './components/tweets/tweets.route';
-import './core/db';
+import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser';
+import { Controller } from './interfaces/controller.interface';
 import { errorMiddleware } from './middlewares/error.middleware';
-import { applyPassportStrategy } from './middlewares/passport.middleware';
 
-export const app: Application = express();
+class App {
+    public app: Application;
 
-app.use(cors());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(passport.initialize());
-applyPassportStrategy(passport);
-app.use(logger('dev'));
+    constructor(controllers: Controller[]) {
+        this.app = express();
 
-app.use('/api/auth', authRoute);
-app.use('/api/users', usersRoute);
-app.use('/api/tweets', passport.authenticate('jwt', { session: false }), tweetsRoute);
+        this.connectToTheDatabase();
+        this.initializeMiddlewares();
+        this.initializeControllers(controllers);
+        this.initializeErrorHandling();
+    }
 
-app.use(errorMiddleware);
+    public listen() {
+        this.app.listen(process.env.PORT, () => {
+            console.log(`App listening on the port ${process.env.PORT}`);
+        });
+    }
+
+    public getServer() {
+        this.app;
+    }
+
+    private initializeMiddlewares() {
+        this.app.use(express.json());
+        this.app.use(express.urlencoded({ extended: true }));
+        this.app.use(cookieParser());
+    }
+
+    private initializeErrorHandling() {
+        this.app.use(errorMiddleware);
+    }
+
+    private initializeControllers(controllers: Controller[]) {
+        controllers.forEach((controller) => {
+            this.app.use('/api', controller.router);
+        });
+    }
+
+    private connectToTheDatabase() {
+        const { MONGO_USER, MONGO_PASSWORD, MONGO_PATH } = process.env;
+        mongoose.connect(`mongodb://${MONGO_USER}:${MONGO_PASSWORD}${MONGO_PATH}`, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true,
+        });
+    }
+}
+
+export { App };
