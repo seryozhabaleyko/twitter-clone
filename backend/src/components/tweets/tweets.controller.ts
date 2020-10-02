@@ -35,6 +35,7 @@ export async function createTweet(req: Request, res: Response, next: NextFunctio
         const tweet = await new TweetModel({
             text: req.body.text,
             user: req.user?._id,
+            imageUrl: req.file ? req.file.path : '',
         }).save();
 
         res.status(201).json({ tweet });
@@ -43,11 +44,10 @@ export async function createTweet(req: Request, res: Response, next: NextFunctio
     }
 }
 
-export function updateTweet(req: Request, res: Response, next: NextFunction) {
+export async function updateTweet(req: Request, res: Response, next: NextFunction) {
     try {
-        res.status(200).json({
-            tweet: 'update user controller',
-        });
+        const tweet = await tweetsService.updateTweet(req.params.id, req.body);
+        res.status(200).json({ tweet });
     } catch (error) {
         next(error);
     }
