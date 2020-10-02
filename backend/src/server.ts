@@ -1,9 +1,12 @@
-import dotenv from 'dotenv';
-import { app } from './app';
+import 'dotenv/config';
+import { App } from './app';
+import { AuthController } from './authentication/authentication.controller';
+import { TweetController } from './tweet/tweet.controller';
+import { UserController } from './user/user.controller';
+import { validateEnv } from './utils/validateEnv';
 
-dotenv.config();
-const port = process.env.PORT;
+validateEnv();
 
-app.listen(port, (): void => {
-    console.log(`Example app listening at http://localhost:${port}`);
-});
+const app = new App([new AuthController(), new UserController(), new TweetController()]);
+
+app.listen();
