@@ -5,7 +5,6 @@ import { User } from '../user/user.interface';
 import { UserWithThatEmailAlreadyExistsException } from '../exceptions/UserWithThatEmailAlreadyExistsException';
 import { DataStoredInToken } from '../interfaces/dataStoredInToken';
 import { TokenData } from '../interfaces/tokenData.interface';
-import { LogInDto } from './authentication.dto';
 import { WrongCredentialsException } from '../exceptions/WrongCredentialsException';
 
 class AuthService {
@@ -23,19 +22,22 @@ class AuthService {
         return user;
     }
 
-    public async login(data: LogInDto) {
+    public async login(data: User): Promise<{ token: string; cookie: string; user: User }> {
         const user: User | null = await this.user.findOne({ email: data.email });
         if (!user) throw new WrongCredentialsException();
 
         const isPasswordMatching: boolean = await bcrypt.compare(data.password, user.password);
         if (!isPasswordMatching) throw new WrongCredentialsException();
 
-        const token = this.createToken(user);
+        const tokenData = this.createToken(user);
+        const cookie = this.createCookie(tokenData);
 
-        return token;
+        return { token: tokenData.token, cookie, user };
     }
 
-    public async logout() {}
+    public createCookie(tokenData: TokenData): string {
+        return `Authorization=${tokenData.token}; HttpOnly; Max-Age=${tokenData.expiresIn}`;
+    }
 
     public createToken(user: User): TokenData {
         const expiresIn: string = '24h';
