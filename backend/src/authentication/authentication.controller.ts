@@ -1,8 +1,8 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { Controller } from '../interfaces/controller.interface';
 import { User } from '../user/user.interface';
-import { LogInDto } from './authentication.dto';
 import { AuthService } from './authentication.service';
+import { registerValidation, loginValidation } from './authentication.validation';
 
 class AuthController implements Controller {
     public path = '/auth';
@@ -14,8 +14,8 @@ class AuthController implements Controller {
     }
 
     private initializeRoutes() {
-        this.router.post(`${this.path}/register`, this.registration);
-        this.router.post(`${this.path}/login`, this.loggingIn);
+        this.router.post(`${this.path}/register`, registerValidation, this.registration);
+        this.router.post(`${this.path}/login`, loginValidation, this.loggingIn);
         this.router.post(`${this.path}/logout`, this.loggingOut);
     }
 
@@ -31,11 +31,12 @@ class AuthController implements Controller {
     };
 
     private loggingIn = async (req: Request, res: Response, next: NextFunction) => {
-        const logInData: LogInDto = req.body;
+        const logInData: User = req.body;
 
         try {
-            const { token } = await this.authService.login(logInData);
-            res.status(200).json({ token: `Bearer ${token}`, message: 'Login successful.' });
+            const { token, cookie, user } = await this.authService.login(logInData);
+            res.setHeader('Set-Cookie', [cookie]);
+            res.status(200).json({ token: `Bearer ${token}`, user, message: 'Login successful.' });
         } catch (error) {
             next(error);
         }
@@ -43,6 +44,8 @@ class AuthController implements Controller {
 
     private loggingOut = async (req: Request, res: Response, next: NextFunction) => {
         try {
+            res.setHeader('Set-Cookie', ['Authorization=; Max-age=0']);
+            res.status(200).json({ message: 'Logged out successfully.' });
         } catch (error) {
             next(error);
         }
