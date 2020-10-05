@@ -1,4 +1,5 @@
 import express, { Application } from 'express';
+import cors from 'cors';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import { Controller } from './interfaces/controller.interface';
@@ -18,7 +19,7 @@ class App {
 
     public listen() {
         this.app.listen(process.env.PORT, () => {
-            console.log(`App listening on the port ${process.env.PORT}`);
+            console.log(`🚀 App listening on the port ${process.env.PORT}`);
         });
     }
 
@@ -27,6 +28,7 @@ class App {
     }
 
     private initializeMiddlewares() {
+        this.app.use(cors());
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(cookieParser());
