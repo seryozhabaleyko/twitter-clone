@@ -2,6 +2,7 @@ import { Router, Response, Request, NextFunction } from 'express';
 import { Controller } from '../interfaces/controller.interface';
 import { TweetService } from './tweet.service';
 import { Tweet } from './tweet.interface';
+import { authMiddleware } from '../middlewares/auth.headers.middleware';
 
 class TweetController implements Controller {
     public path = '/tweets';
@@ -13,11 +14,11 @@ class TweetController implements Controller {
     }
 
     private initializeRoutes() {
-        this.router.get(this.path, this.getAllTweets);
-        this.router.get(`${this.path}/:id`, this.getTweetById);
-        this.router.post(this.path, this.createTweet);
-        this.router.patch(`${this.path}/:id`, this.modifyTweet);
-        this.router.delete(`${this.path}/:id`, this.deleteTweet);
+        this.router.get(this.path, authMiddleware, this.getAllTweets);
+        this.router.get(`${this.path}/:id`, authMiddleware, this.getTweetById);
+        this.router.post(this.path, authMiddleware, this.createTweet);
+        this.router.patch(`${this.path}/:id`, authMiddleware, this.modifyTweet);
+        this.router.delete(`${this.path}/:id`, authMiddleware, this.deleteTweet);
     }
 
     private getAllTweets = async (req: Request, res: Response, next: NextFunction) => {
@@ -30,7 +31,7 @@ class TweetController implements Controller {
     };
 
     private getTweetById = async (req: Request, res: Response, next: NextFunction) => {
-        const tweetId: string = req.params.id;
+        const tweetId: string = String(req.params.id);
 
         try {
             const tweet: Tweet = await this.tweetService.getTweetById(tweetId);
@@ -41,7 +42,7 @@ class TweetController implements Controller {
     };
 
     private modifyTweet = async (req: Request, res: Response, next: NextFunction) => {
-        const tweetId: string = req.params.id;
+        const tweetId: string = String(req.params.id);
         const tweetData: Tweet = req.body;
 
         try {
@@ -53,22 +54,22 @@ class TweetController implements Controller {
     };
 
     private createTweet = async (req: Request, res: Response, next: NextFunction) => {
+        const authorId: string = String(req.user?._id);
         const tweetData: Tweet = req.body;
-        const userId: string = req.user?._id;
 
         try {
-            const tweet: Tweet = await this.tweetService.createTweet(userId, tweetData);
-            res.status(200).json({ tweet, message: 'Tweet created.' });
+            const tweet: Tweet = await this.tweetService.createTweet(authorId, tweetData);
+            res.status(201).json({ tweet, message: 'Tweet created.' });
         } catch (error) {
             next(error);
         }
     };
 
     private deleteTweet = async (req: Request, res: Response, next: NextFunction) => {
-        const id: string = req.params.id;
+        const tweetId: string = String(req.params.id);
 
         try {
-            const tweet: Tweet = await this.tweetService.deleteTweet(id);
+            const tweet: Tweet = await this.tweetService.deleteTweet(tweetId);
             res.status(200).json({ tweet, message: 'Tweet deleted.' });
         } catch (error) {
             next(error);
