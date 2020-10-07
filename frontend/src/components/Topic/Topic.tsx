@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Topic as TopicProps } from '../../store/types/topics';
+import { Topic as TopicProps } from '../../state/modules/topics/topics.types';
 
 import './Topic.scss';
 
