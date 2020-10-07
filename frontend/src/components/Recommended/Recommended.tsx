@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import User from './User';
-import { fetchRecommended } from '../../store/actions/recommended';
-import { getRecommended } from '../../store/selectors/recommended';
+import { fetchRecommended } from '../../state/modules/recommended/recommended.actions';
+import { getRecommended } from '../../state/modules/recommended/recommended.selectors';
 
 import './Recommended.scss';
 
