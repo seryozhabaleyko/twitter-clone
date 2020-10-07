@@ -12,7 +12,6 @@ function App() {
     return (
         <div id="twitter">
             <Router>
-                <Header />
                 <Switch>
                     <PrivateRoute path="/" exact>
                         <Logout />
@@ -21,11 +20,12 @@ function App() {
                         <SignIn />
                     </Route>
                     <Route path="/home">
+                        <Header />
                         <Home />
                     </Route>
-                    <Route path="/:nickname/tweet/:id">
+                    <PrivateRoute path="/:nickname/tweet/:id">
                         <Tweet />
-                    </Route>
+                    </PrivateRoute>
                 </Switch>
             </Router>
         </div>
