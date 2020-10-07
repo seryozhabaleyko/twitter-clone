@@ -1,3 +1,5 @@
+<img src="https://github.com/seryozhabaleyko/twitter-clone/blob/master/frontend/twitter-clone.jpg?raw=true"/>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
