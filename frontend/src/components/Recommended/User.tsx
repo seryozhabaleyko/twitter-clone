@@ -1,7 +1,7 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 
-import { User as UserProps } from '../../store/types/recommended';
+import { User as UserProps } from '../../state/modules/recommended/recommended.types';
 import Follow from './Follow';
 
 import './User.scss';
