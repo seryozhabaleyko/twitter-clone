@@ -1,4 +1,12 @@
+<p align="center">
+<img width="20%" src="https://camo.githubusercontent.com/b304fe1e86bbc389f64865310aa9e6ee4674b948/68747470733a2f2f7777772e6267722e696e2f77702d636f6e74656e742f75706c6f6164732f323031332f30312f747769747465725f69636f6e2e706e67" />
+</p>
+
+<h1 align="center">Twitter Clone Frontend</h1>
+
 <img src="https://github.com/seryozhabaleyko/twitter-clone/blob/master/frontend/twitter-clone.jpg?raw=true"/>
+
+<hr/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
