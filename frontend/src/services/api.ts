@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Tweet } from '../store/types/tweet';
+import { Tweet } from '../state/modules/tweet/tweet.types';
 
 export function fetchTweetsApi() {
     const url = 'https://trycode.pw/c/2OBQ1.json';
@@ -19,10 +19,10 @@ export function addTweetApi(tweet: Tweet) {
     });
 }
 
-export async function fetchTweetApi(id: Tweet['id']) {
+export async function fetchTweetApi(id: Tweet['_id']) {
     const url = 'https://trycode.pw/c/2OBQ1.json';
     const response = await axios.get(url);
-    return response.data.filter((tweet: { _id: string }) => tweet._id === id);
+    return response.data.filter((tweet: Tweet) => tweet._id === id);
 }
 
 export function fetchRecommendedApi() {
