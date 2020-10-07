@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import configureStore from './store/configureStore';
-import rootSaga from './store/sagas/rootSaga';
+import { configureStore } from './state/store';
+import { rootSaga } from './state/modules/rootSaga';
 
 import './index.scss';
 
