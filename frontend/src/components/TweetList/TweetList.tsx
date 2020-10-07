@@ -4,7 +4,7 @@ import Alert from 'antd/lib/alert';
 
 import Tweet from '../Tweet';
 import TweetLoader from '../TweetLoader';
-import { getTweets } from '../../store/selectors/tweets';
+import { getTweets } from '../../state/modules/tweets/tweets.selectors';
 
 import './TweetList.scss';
 
