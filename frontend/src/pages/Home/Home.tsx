@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 import Feed from '../../components/Feed';
 import Sidebar from '../../components/Sidebar';
-import { fetchTweets } from '../../store/actions/tweets';
-import { fetchTopics } from '../../store/actions/topics';
+import { fetchTweets } from '../../state/modules/tweets/tweets.actions';
+import { fetchTopics } from '../../state/modules/topics/topics.actions';
 
 import './Home.scss';
 
