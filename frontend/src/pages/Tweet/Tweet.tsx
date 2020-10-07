@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { fetchTweet } from '../../store/actions/tweet';
-import { getTweet } from '../../store/selectors/tweet';
+import { fetchTweet } from '../../state/modules/tweet/tweet.actions';
+import { getTweet } from '../../state/modules/tweet/tweet.selectors';
 
 import './Tweet.scss';
 
