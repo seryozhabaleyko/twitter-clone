@@ -5,7 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import SvgIcon from '@material-ui/core/SvgIcon';
 
 import Topic from '../Topic';
-import { getTopics } from '../../store/selectors/topics';
+import { getTopics } from '../../state/modules/topics/topics.selectors';
 
 import './Topics.scss';
 
