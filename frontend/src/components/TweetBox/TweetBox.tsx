@@ -8,8 +8,8 @@ import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { styled } from '@material-ui/core/styles';
 
-import { addTweet } from '../../store/actions/tweet';
-import { getTweet } from '../../store/selectors/tweet';
+import { addTweet } from '../../state/modules/tweet/tweet.actions';
+import { getTweet } from '../../state/modules/tweet/tweet.selectors';
 
 import './TweetBox.scss';
 
@@ -40,18 +40,19 @@ function TweetBox() {
     };
 
     const handleTweetSubmit = () => {
-        const id = (
+        const _id = (
             Math.random().toString(36).substring(2, 16) +
             Math.random().toString(36).substring(2, 16)
         ).toUpperCase();
 
         dispatch(
             addTweet({
-                id,
+                _id,
                 text,
-                user: {
-                    name: 'Серёжа Балейко',
-                    nickname: 'seryozha.baleyko',
+                author: {
+                    name: 'Серёжа',
+                    surname: 'Балейко',
+                    username: 'seryozha.baleyko',
                     avatarUrl:
                         'https://pbs.twimg.com/profile_images/978676063608999937/2JuDAHxl_bigger.jpg',
                 },
