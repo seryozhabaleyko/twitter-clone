@@ -74,3 +74,7 @@
         <a href="https://www.mongodb.com">MongoDB</a> - документоориентированная система управления базами данных с открытым исходным кодом, не требующая описания схемы таблиц. Считается одним из классических примеров NoSQL-систем, использует JSON-подобные документы и схему базы данных. Написана на языке C++.
     </li>
 </ul>
+
+<h1>Скриншот</h1>
+
+<img src="https://github.com/seryozhabaleyko/twitter-clone/blob/master/frontend/twitter-clone.jpg?raw=true" />
