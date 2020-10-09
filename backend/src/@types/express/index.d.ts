@@ -1,7 +1,8 @@
-import { IUserDoc } from '../../components/users/users.interface';
+import { Document } from 'mongoose';
+import { User } from '../../user/user.interface';
 
 declare global {
     namespace Express {
-        interface User extends IUserDoc {}
+        interface User extends User, Document {}
     }
 }
