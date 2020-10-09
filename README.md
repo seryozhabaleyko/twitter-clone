@@ -13,9 +13,11 @@
     <a href="https://github.com/seryozhabaleyko/twitter-clone/stargazers">
         <img src="https://img.shields.io/github/stars/seryozhabaleyko/twitter-clone?style=for-the-badge" />
     </a>
+    <img src="https://img.shields.io/github/forks/seryozhabaleyko/twitter-clone?style=for-the-badge"/>
     <a href="https://github.com/seryozhabaleyko/twitter-clone/issues">
         <img src="https://img.shields.io/github/issues-raw/seryozhabaleyko/twitter-clone?style=for-the-badge" />
     </a>
+    <img src="https://img.shields.io/github/issues-pr/seryozhabaleyko/twitter-clone?style=for-the-badge&labelColor=343b41"/>
 </p>
 
 <h1>Технологии</h1>
