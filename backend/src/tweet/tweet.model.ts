@@ -5,9 +5,11 @@ const tweetSchema = new Schema(
     {
         text: {
             type: String,
+            required: true,
             trim: true,
         },
         author: {
+            required: true,
             ref: 'Users',
             type: Schema.Types.ObjectId,
         },
